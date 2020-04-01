@@ -1,0 +1,76 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Avance proyecto final econometría II
+# 
+# Por
+# - Santiago Sánchez 
+# - José Angel Tovar 
+# 
+# 4 modelos
+# 
+# Y = P(Manchester_City_gane_la_siguiente_jornada: Si/No)
+# 
+# Y = P(Liverpool_gane_la_siguiente_jornada: Si/No)
+# 
+# Y = P(Chelsea_gane_la_siguiente_jornada: Si/No)
+# 
+# Y = P(Tottenham_gane_la_siguiente_jornada: Si/No)
+# 
+# 
+
+# Variables dependientes a utilizar 
+# 
+# - Juego local o visitante; variable dummy que define la importancia de jugar en casa o no.
+#    - Fuente; https://www.resultados-futbol.com/premier/grupo1/jornada1
+#    
+# - Goles por partido; relación directa con el marcador de la jornada.
+#    - Fuente; https://www.resultados-futbol.com/premier/grupo1/jornada1
+# 
+# - Proporción de goles anotados/recibidos por partido; definida como DF, da indicio de que tan cerrado estuvo el marcador y como tal el juego. 
+#     - Fuente; https://www.resultados-futbol.com/premier/grupo1/jornada1
+# 
+# - Posición en tabla tras cada jornada; indica a través de un número que tan bien esta jugando el equipo jornada tras jornada, mientras mas grande sea el número, > p(x) hay de que gane el siguiente juego
+#     - Fuente; https://www.resultados-futbol.com/premier/grupo1/jornada1
+# 
+# - Tipo de clima; da indicio de bajo que condición juega mejor un equipo 
+#     - Fuente; por definir 
+# 
+# - Posición en la tabla del contrincante; da indicio de como es la condición actual del contrincante 
+#     - Fuente: https://www.resultados-futbol.com/premier/grupo1/jornada1
+# 
+
+# In[1]:
+
+
+print('https://www.resultados-futbol.com/premier/grupo1/jornada1')
+
+
+# In[2]:
+
+
+page = 'www.resultados-futbol.com/premier/grupo1/jornada{}'
+
+
+# In[9]:
+
+
+for i in range (32):
+    print(page.format(i))
+
+
+# In[10]:
+
+
+import urllib
+from urllib.request import urlopen 
+from bs4 import BeautifulSoup
+import re 
+import unicodedata 
+
+
+# In[ ]:
+
+
+
+
